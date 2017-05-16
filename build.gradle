@@ -1,4 +1,6 @@
-isModule=false
+ext {
+  isModule=false
+}
 if (isModule.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
