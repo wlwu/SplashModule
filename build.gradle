@@ -53,7 +53,6 @@ repositories {
     flatDir {
         dirs 'libs'
     }
-    mavenCentral()
 }
 buildscript {
     ext.kotlin_version = '1.1.2-3'
@@ -72,8 +71,8 @@ buildscript {
 }
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 
