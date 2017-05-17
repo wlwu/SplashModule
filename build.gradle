@@ -6,7 +6,6 @@ if (isModule.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
-apply from:'base.gradle'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 android {
@@ -61,4 +60,24 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.alibaba:arouter-api:1.2.1'
     compile 'com.github.wlwu:BaseModule:v1.0.0'
+}
+buildscript {
+    ext.kotlin_version = '1.1.2-3'
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.2-3"
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+        //classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
 }
